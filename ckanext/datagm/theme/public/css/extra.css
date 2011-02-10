@@ -1,25 +1,63 @@
-body{background-color:#154D53}
+body {
+  background-color:#154D53}
 
-body, h1, h2, h3, h4, h5, h6 {font-family:arial}
+body, h1, h2, h3, h4, h5, h6 {
+  font-family:arial
+}
 
-h2.head {font-family:georgia,arial; font-size:200%;}
+h2.head {
+  font-family:georgia,arial; font-size:200%;
+}
 
-a, a:link, a:visited {color:#154D53 !important;}
+a, a:link, a:visited {
+  color:#154D53 !important;
+}
 
-.package .api div, div.resources td {background:#F1FAF0;}
+.package .api div, div.resources td {
+  background:#F1FAF0;
+}
 
-.DDDmenu {background:#C1E1CD;}
+.DDDmenu {
+  background:#C1E1CD;
+}
 
-div.resources h4 {background:#073236;}
+div.resources h4 {
+  background:#073236;
+}
 
-#primary .widget-container {background:#F1FAF0;border: 1px solid #073236;}
+#primary .widget-container {
+  background:#F1FAF0;
+  border: 1px solid #073236;
+}
 
-#access {border-top:2px solid #073236; border-bottom:2px solid #073236}
+#access {
+  border-top:2px solid #073236; 
+  border-bottom:2px solid #073236;
+}
 
-div.menu ul li {border:2px solid 073236; font-size:125%; font-weight:normal}
-div.menu ul li a:hover {background:#F1FAF0 !important;}
-div.menu ul li a.active {font-weight:bold;background:#F1FAF0;border-left:1px dotted #073236;
-border-right:1px dotted #073236}
+div.menu ul li {
+  border:2px solid #073236; font-size:125%; font-weight:normal
+}
+
+div.menu ul li a:hover {
+  background:#F1FAF0 !important;
+}
+
+div.menu ul li a.active, 
+div.menu ul li.current_page_active, 
+div.menu ul li.current_page_ancestor {
+  font-weight:bold;
+  background:#F1FAF0;
+  border-left:1px dotted #073236;
+  border-right:1px dotted #073236
+}
+
+div.menu ul li a.active {
+  font-weight:bold;
+  background:#F1FAF0;
+  border-left:1px dotted #073236;
+  border-right:1px dotted #073236
+}
 
 div.pane {
  border:2px solid 073236;
