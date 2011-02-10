@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:py="http://genshi.edgewall.org/" 
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:doap="http://usefulinc.com/ns/doap"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  py:strip=""
+  >
+  <py:match path="//div[@class='menu']">
+    <div class="menu">
+      <ul>
+        <li>${h.nav_link(c, _('Home'), controller='home', action='index', id=None)}
+      </li>
+      <li>${h.nav_link(c, _('Data'), controller='package', action='index', id=None)}
+      </li>
+    </ul>
+    </div>
+  </py:match>
+  <py:match path="//div[@id='top-barx']">
+     <div id="top-bar">
+         Alpha Test
+     </div>
+  </py:match>
+  
+  <py:match path="//div[@id='footerx']">
+    <div id="colophon">
+      <div id="footer-widget-area" role="complementary">
+
+        <div id="first" class="widget-area">
+          <ul class="xoxo">
+            <li class="widget-container widget_text">
+            <h3 class="widget-title">About</h3>
+            <div class="textwidget">
+              <ul>
+                <li>
+                  <a href="http://data.overheid.nl/">data.overheid.nl</a>
+                </li>
+              </ul>
+            </div>
+            </li>
+          </ul>
+        </div><!-- #first .widget-area -->
+      </div>
+    </div>
+  </py:match>
+  <xi:include href="layout_base.html" />
+</html>
