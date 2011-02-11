@@ -18,6 +18,8 @@
       $("#tagcloud a").tagcloud();
     $('#slider').nivoSlider({
         effect:'fade', 
+        controlNav:false,
+        directionNav:false
     });
     })
   </script>
@@ -42,8 +44,8 @@
     }
     #slider {
         position:relative;
-        width:579px; /* Change this to your images width */
-        height:340px; /* Change this to your images height */
+        width:420px; /* Change this to your images width */
+        height:250px; /* Change this to your images height */
         background:url(images/loading.gif) no-repeat 50% 50%;
     }
     #slider img {
@@ -61,24 +63,42 @@
 
 
   <div py:match="content">
-    <h2>Welcome to ${g.site_title}</h2>
-    <p i18n:msg="title">
-      ${g.site_title} is an
-      <a href="http://www.opendefinition.org/ossd/">open registry</a>
-      of data and content packages. Harnessing the CKAN software, this
-      site makes it easy to find, share and reuse content and data,
-      especially in ways that are machine automatable.
-    </p>
-    
-    <p i18n:msg="package_count"><strong>${c.package_count} registered data packages</strong> available.</p>
-
-    <xi:include href="carousel.html" />
-
-    <div class="pane">
-     <xi:include href="../package/search_form.html" />
-     ${h.nav_link(c, _('Show all'), controller='package', action='index', id=None)}
+   <div class="content-row row1">
+    <div class="pane col1">
+      <xi:include href="carousel.html" />
     </div>
-    <div class="pane">
+    <div class="pane col2">
+     <div class="content-pad">
+     <h2>Welcome to ${g.site_title}</h2>
+     <p i18n:msg="title">
+       ${g.site_title} is an
+       <a href="http://www.opendefinition.org/ossd/">open registry</a>
+       of data and content packages. Harnessing the CKAN software, this
+       site makes it easy to find, share and reuse content and data,
+       especially in ways that are machine automatable.
+     </p>
+     </div>
+    </div>
+   </div>
+    
+   <div class="content-row row2">
+    <div class="pane col1">
+      <h4>browse by publisher</h4>
+      <ul class="packages">
+      <py:for each="group in c.groups">
+       <li>
+	<div class="header">
+         <span class="title"><a href="${h.url_for(controller='group', action='read', id=group.name)}">${group.title}</a></span>
+	</div>
+	<div class="extract">
+         ${h.truncate(group.description, length=80, whole_word=True)}
+        </div>
+       </li>
+      </py:for>
+      </ul>
+    </div>
+
+    <div class="pane col2">
       <h4>Top Tags</h4>
       <div id="tagcloud">
       <py:for each="tag_name, count in c.tag_counts">
@@ -87,25 +107,19 @@
       </py:for>
       </div>
     </div>
-    
-    <div class="pane">
-      <h4>Popular datasets</h4>
+   </div>
+
+   <div class="content-row row2">
+    <div class="pane col1">
+      <h4>popular data</h4> 
+      ${package_list(c.top_packages)}
+    </div>
+    <div class="pane col2">
+      <h4>latest data</h4>
       ${package_list(c.latest_packages)}
     </div>
+   </div>
 
-
-    <div class="pane">
-      <h4>Publishers</h4>
-      <ul>
-      <py:for each="group in c.groups">
-       <li>
-        <h5><a href="${h.url_for(controller='group', action='read', id=group.name)}">${group.title}</a></h5>
-        <p>${h.truncate(group.description, length=80, whole_word=True)}</p>
-       </li>
-      </py:for>
-      </ul>
-     </div>
-    <hr />
   </div>
 
   <xi:include href="layout.html" />

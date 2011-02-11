@@ -58,10 +58,30 @@ div.menu ul li a.active {
   border-left:1px dotted #073236;
   border-right:1px dotted #073236
 }
+body.home div#content {
+ margin-right:20px;
+}
 
 div.pane {
- border:2px solid 073236;
- padding: 20px;
+ margin-bottom: 20px;
+ border: 1px solid #073236;
+}
+div.content-row {
+ clear: both;
+}
+div.content-row div.col1 {
+ width: 420px;
+ float: left;
+}
+div.content-row  div.col2 {
+ width: 400px;
+ position: absolute;
+ margin-left: 450px;
+ float: right;
+}
+
+div.content-pad {
+ padding: 5px;
 }
 
 /*
