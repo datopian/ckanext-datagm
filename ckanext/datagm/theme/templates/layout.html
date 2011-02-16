@@ -22,24 +22,41 @@
     </ul>
     </div>
   </py:match>
-  <py:match path="//div[@id='top-barx']">
-     <div id="top-bar">
-         Alpha Test
-     </div>
+  <py:match path="//div[@id='top-bar']/div[@class='search-form']">
+    <div class="search-form">
+        <form action="${url(controller='package', action='search')}" method="GET">
+          <input type="search" class="search" name="q" value="" autocomplete="off" results="5" placeholder="What are you looking for?"  id="bigsearch"  />
+	  <input type="submit" class="searchbutton" name="search" value="search" />
+        </form>
+    </div>
   </py:match>
   
-  <py:match path="//div[@id='footerx']">
+  <py:match path="//div[@id='footer']">
     <div id="colophon">
       <div id="footer-widget-area" role="complementary">
 
         <div id="first" class="widget-area">
           <ul class="xoxo">
             <li class="widget-container widget_text">
-            <h3 class="widget-title">About</h3>
             <div class="textwidget">
               <ul>
                 <li>
-                  <a href="http://data.overheid.nl/">data.overheid.nl</a>
+                  <a href="#">privacy</a>
+                </li>
+                <li>
+                  <a href="#">code of conduct</a>
+                </li>
+                <li>
+                  <a href="#">accessibility</a>
+                </li>
+                <li>
+                  <a href="#">terms / license</a>
+                </li>
+                <li>
+                  <a href="#">faqs</a>
+                </li>
+                <li>
+                  <a href="#">contact us</a>
                 </li>
               </ul>
             </div>

@@ -1,5 +1,6 @@
 body {
-  background-color:#154D53}
+  background-color:#154D53;
+}
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family:arial
@@ -19,6 +20,12 @@ a, a:link, a:visited {
 
 .DDDmenu {
   background:#C1E1CD;
+}
+
+h3#factsheader {
+  background-color: #444;
+  color: white;
+  padding: 10px;
 }
 
 div.resources h4 {
@@ -167,3 +174,17 @@ div.content-pad {
 }
 .nivo-controlNav a.active {
 	font-weight:bold;
+}
+
+#top-bar .search-form input.search {
+  width: 16em;
+  font-size: 1.8em;
+}
+
+#top-bar .search-form input.searchbutton {
+  font-size: 1.8em;
+}
+
+div#footer-widget-area ul li div.textwidget ul li {
+ font-size: 1.3em;
+}
