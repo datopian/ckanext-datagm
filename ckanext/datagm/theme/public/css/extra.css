@@ -43,7 +43,7 @@ div.resources h4 {
 }
 
 div.menu ul li {
-  border:2px solid #073236; font-size:125%; font-weight:normal
+  border: 0; font-size:125%; font-weight:normal
 }
 
 div.menu ul li a:hover {
@@ -57,6 +57,10 @@ div.menu ul li.current_page_ancestor {
   background:#F1FAF0;
   border-left:1px dotted #073236;
   border-right:1px dotted #073236
+}
+
+div.textwidget ul li {
+   display:inline
 }
 
 div.menu ul li a.active {
@@ -188,3 +192,28 @@ div.content-pad {
 div#footer-widget-area ul li div.textwidget ul li {
  font-size: 1.3em;
 }
+
+body{background-color:#154D53}
+
+body, h1, h2, h3, h4, h5, h6 {font-family:arial}
+
+h2.head {font-family:georgia,arial; font-size:200%;}
+
+a, a:link, a:visited {color:#154D53 !important;}
+
+.package .api div, div.resources td {background:#F1FAF0;}
+
+.DDDmenu {background:#C1E1CD;}
+
+div.resources h4 {background:#073236;}
+
+#primary .widget-container {background:#F1FAF0;border: 1px solid #073236;}
+
+#access {border-top:2px solid #073236; border-bottom:2px solid #073236}
+
+div.menu ul li {font-size:125%; font-weight:normal;border:0}
+div.menu ul li a:hover {background:#F1FAF0 !important;}
+div.menu ul li a.active {font-weight:bold;background:#F1FAF0;border-left:1px dotted #073236;
+border-right:1px dotted #073236}
+
+div.textwidget ul li {display:inline}
