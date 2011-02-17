@@ -65,10 +65,10 @@
 
   <div py:match="content">
    <div class="content-row row1">
-    <div class="pane col1">
+    <div class="pane span-1">
       <xi:include href="carousel.html" />
     </div>
-    <div class="pane col2">
+    <div id="welcome-pane" class="pane span-1 last">
      <div class="content-pad">
      <h2>Welcome to ${g.site_title}</h2>
      <p i18n:msg="title">
@@ -78,21 +78,21 @@
        site makes it easy to find, share and reuse content and data,
        especially in ways that are machine automatable.
      </p>
+     <span class="st_twitter_large" displayText="Tweet"></span><span class="st_facebook_large" displayText="Facebook"></span><span class="st_ybuzz_large" displayText="Yahoo! Buzz"></span><span class="st_gbuzz_large" displayText="Google Buzz"></span><span class="st_email_large" displayText="Email"></span><span class="st_sharethis_large" displayText="ShareThis"></span>
      </div>
     </div>
    </div>
 
-   <h3 id="factsheader">
-    Facts, figures and more
-
-  <span class="st_twitter_large" displayText="Tweet"></span><span class="st_facebook_large" displayText="Facebook"></span><span class="st_ybuzz_large" displayText="Yahoo! Buzz"></span><span class="st_gbuzz_large" displayText="Google Buzz"></span><span class="st_email_large" displayText="Email"></span><span class="st_sharethis_large" displayText="ShareThis"></span>
-
-   </h3>
-
-
+   <div class="content-row row1">
+    <div class="span-2 last">
+      <h3 id="factsheader">
+	Facts, figures and more
+      </h3>
+    </div>
+  </div>
 
  <div class="content-row row2">
-    <div class="pane col1">
+    <div class="pane span-1">
       <h4>browse by publisher</h4>
       <ul class="packages">
       <py:for each="group in c.groups">
@@ -108,7 +108,7 @@
       </ul>
     </div>
 
-    <div class="pane col2">
+    <div class="pane span-1 last">
       <h4>Top Tags</h4>
       <div id="tagcloud">
       <py:for each="tag_name, count in c.tag_counts">
@@ -120,11 +120,11 @@
    </div>
 
    <div class="content-row row2">
-    <div class="pane col1">
+    <div class="pane span-1">
       <h4>popular data</h4> 
       ${package_list(c.top_packages)}
     </div>
-    <div class="pane col2">
+    <div class="pane span-1 last">
       <h4>latest data</h4>
       ${package_list(c.latest_packages)}
     </div>

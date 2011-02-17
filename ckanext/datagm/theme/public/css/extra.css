@@ -25,7 +25,8 @@ a, a:link, a:visited {
 h3#factsheader {
   background-color: #444;
   color: white;
-  padding: 10px;
+  font-size: 1.4em;
+  padding: 5px;
 }
 
 div.resources h4 {
@@ -63,6 +64,10 @@ div.textwidget ul li {
    display:inline
 }
 
+#welcome-pane {
+ height: 250px;
+}
+
 div.menu ul li a.active {
   font-weight:bold;
   background:#F1FAF0;
@@ -78,22 +83,34 @@ div.pane {
  border: 1px solid #073236;
 }
 div.content-row {
+ margin: 0 auto;
+ width: 880px;
  clear: both;
 }
-div.content-row div.col1 {
+div.content-row div.span-1 {
  width: 420px;
  float: left;
+ margin-right: 10px;
 }
-div.content-row  div.col2 {
- width: 400px;
- position: absolute;
- margin-left: 450px;
- float: right;
+div.content-row div.span-2 {
+ width: 855px;
+ float: left;
+}
+
+div.last {
+ margin-right: 0;
 }
 
 div.content-pad {
  padding: 5px;
 }
+
+#content div.content-row div.pane h4 {
+ padding: 5px;
+ margin: 0;
+ font-size: 1.2em;
+}
+
 
 /*
  * jQuery Nivo Slider v2.4
