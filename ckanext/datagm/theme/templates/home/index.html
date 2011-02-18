@@ -87,6 +87,17 @@ DataGM has been created by public sector partners to free Greater Manchester’s
     </div>
   </div>
 
+   <div class="content-row row1">
+    <div class="pane span-1">
+      <h4>popular data</h4> 
+      ${package_list(c.top_packages)}
+    </div>
+    <div class="pane span-1 last">
+      <h4>latest data (out of ${c.package_count} datasets)</h4>
+      ${package_list(c.latest_packages)}
+    </div>
+   </div>
+
  <div class="content-row row2">
     <div class="pane span-1">
       <h4>browse by publisher</h4>
@@ -112,17 +123,6 @@ DataGM has been created by public sector partners to free Greater Manchester’s
           action='read', id=tag_name)}">${tag_name}</a>
       </py:for>
       </div>
-    </div>
-   </div>
-
-   <div class="content-row row2">
-    <div class="pane span-1">
-      <h4>popular data</h4> 
-      ${package_list(c.top_packages)}
-    </div>
-    <div class="pane span-1 last">
-      <h4>latest data</h4>
-      ${package_list(c.latest_packages)}
     </div>
    </div>
 
