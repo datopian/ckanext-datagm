@@ -14,6 +14,10 @@ a, a:link, a:visited {
   color:#154D53 !important;
 }
 
+#content p, #content h1, #content h2, #content h3 {
+  color:#154D53; 
+}
+
 .package .api div, div.resources td {
   background:#F1FAF0;
 }
