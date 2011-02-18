@@ -8,7 +8,9 @@
   <py:def function="optional_head">
   <script src="/scripts/jquery.tagcloud.js"></script>
   <script src="/scripts/jquery.nivo.slider.pack.js"></script>
+  <script src="/scripts/jquery.matchHeights.min.js"></script>
   <script type="text/javascript" charset="utf-8">
+
     $(document).ready(function(){
       $.fn.tagcloud.defaults = {
         size: {start: 10, end: 32, unit: "pt"}, 
@@ -16,6 +18,7 @@
       };
 
       $("#tagcloud a").tagcloud();
+      $('.row1 .pane').matchHeights()
     $('#slider').nivoSlider({
         effect:'fade', 
         controlNav:false,
@@ -116,15 +119,13 @@ DataGM has been created by public sector partners to free Greater Manchester’s
     </div>
 
     <div class="pane span-1 last">
-        <h4>Top Tags</h4>
-     <py:if test="c.facets and len(c.facets.get('tags', {}))">
-        <div id="tagcloud">
-        <py:for each="tag_name, count in c.facets.get('tags', {}).items()">
-          <a rel="${count}" title="${count}" href="${h.url_for(controller='tag',
-            action='read', id=tag_name)}">${tag_name}</a>
-        </py:for>
-        </div>
-     </py:if>
+      <h4>Top Tags</h4>
+      <div id="tagcloud">
+      <py:for each="tag_name, count in c.tag_counts">
+        <a rel="${count}" title="${count}" href="${h.url_for(controller='tag',
+          action='read', id=tag_name)}">${tag_name}</a>
+      </py:for>
+      </div>
     </div>
    </div>
 

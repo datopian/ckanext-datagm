@@ -1,6 +1,8 @@
 import sys
 from ckan.lib.base import *
+import random
 from ckan.lib.search import query_for
+import ckan.lib.stats
 import ckan.authz as authz
 from ckan.authz import Authorizer
 from ckanext.googleanalytics.controller import GAController
@@ -38,5 +40,18 @@ class DataGMHomeController(GAController):
             cache_key = "fresh-install"
 
         etag_cache(cache_key)
+
+        def tag_counts():
+            '''Top 50 tags (by package counts) in random order (to make cloud
+            look nice).
+            '''
+            tag_counts = ckan.lib.stats.Stats().top_tags(limit=50,
+                                            returned_tag_info='name')
+            tag_counts = [tuple(row) for row in tag_counts]
+            random.shuffle(tag_counts)
+            return tag_counts
+        mycache = cache.get_cache('tag_counts', type='dbm')
+        c.tag_counts = mycache.get_value(key='tag_counts_home_page',
+                createfunc=tag_counts, expiretime=cache_expires)
         return render('home/index.html', cache_key=cache_key,
                 cache_expire=cache_expires)
