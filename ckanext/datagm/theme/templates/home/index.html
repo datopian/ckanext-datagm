@@ -116,13 +116,15 @@ DataGM has been created by public sector partners to free Greater Manchester’s
     </div>
 
     <div class="pane span-1 last">
-      <h4>Top Tags</h4>
-      <div id="tagcloud">
-      <py:for each="tag_name, count in c.tag_counts">
-        <a rel="${count}" title="${count}" href="${h.url_for(controller='tag',
-          action='read', id=tag_name)}">${tag_name}</a>
-      </py:for>
-      </div>
+        <h4>Top Tags</h4>
+     <py:if test="c.facets and len(c.facets.get('tags', {}))">
+        <div id="tagcloud">
+        <py:for each="tag_name, count in c.facets.get('tags', {}).items()">
+          <a rel="${count}" title="${count}" href="${h.url_for(controller='tag',
+            action='read', id=tag_name)}">${tag_name}</a>
+        </py:for>
+        </div>
+     </py:if>
     </div>
    </div>
 
