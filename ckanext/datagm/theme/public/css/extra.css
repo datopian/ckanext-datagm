@@ -27,6 +27,8 @@ h3#factsheader {
   color: white;
   font-size: 1.4em;
   padding: 5px;
+  margin-bottom: 0;
+  margin-top: 20px;
 }
 
 div.resources h4 {
@@ -79,7 +81,8 @@ body.home div#content {
 }
 
 div.pane {
- margin-bottom: 20px;
+ margin-bottom: 10px;
+ margin-top: 10px;
  border: 1px solid #073236;
 }
 div.content-row {
@@ -204,6 +207,13 @@ div.content-pad {
   font-size: 1.8em;
 }
 
+h1#site-title {
+ position: absolute;
+}
+div#top-bar {
+ height: 120px;
+}
+
 #top-bar .search-form input.searchbutton {
   font-size: 1.8em;
 }
@@ -235,4 +245,7 @@ div.menu ul li a:hover {background:#F1FAF0 !important;}
 div.menu ul li a.active {font-weight:bold;background:#F1FAF0;border-left:1px dotted #073236;
 border-right:1px dotted #073236}
 
-div.textwidget ul li {display:inline}
+div.textwidget ul,
+div.textwidget ul li,
+div.textwidget ul li a,
+ {display:inline ! important}
