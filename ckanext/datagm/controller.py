@@ -2,6 +2,7 @@ import sys
 from ckan.lib.base import *
 from ckan.lib.search import query_for
 import ckan.authz as authz
+from ckan.authz import Authorizer
 from ckanext.googleanalytics.controller import GAController
 from ckan.lib.cache import proxy_cache, get_cache_expires
 
@@ -9,6 +10,9 @@ cache_expires = get_cache_expires(sys.modules[__name__])
 
 
 class DataGMHomeController(GAController):
+
+    authorizer = Authorizer()
+
     @proxy_cache(expires=cache_expires)
     def index(self):
         c.groups = authz.Authorizer()\
