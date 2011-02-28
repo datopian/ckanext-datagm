@@ -30,4 +30,4 @@ class DataGMPlugin(SingletonPlugin):
                 config.get('extra_template_paths', '')])
         config['googleanalytics.id'] = 'UA-21313878-1'
         config['ckan.site_title'] = "DataGM - Data Greater Manchester"
-        config['ckan.site_logo'] = "/img/datagm.png"
+        config['ckan.site_logo'] = "/img/datagm-beta.png"

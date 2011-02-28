@@ -26,5 +26,8 @@ setup(
 	"""
         [ckan.plugins]
 	datagm=ckanext.datagm:DataGMPlugin
+
+        [ckan.forms]
+        datagm_package_form = ckanext.datagm.package_form:get_datagm_fieldset
 	""",
 )

@@ -108,7 +108,7 @@ DataGM has been created by public sector partners to free Greater Manchester’s
       <py:for each="group in c.groups">
        <li>
 	<div class="header">
-         <span class="title"><a href="${h.url_for(controller='group', action='read', id=group.name)}">${group.title}</a></span>
+         <span class="title"><a href="${h.url_for(controller='group', action='read', id=group.name)}">${group.title}</a>  (${len(group.packages)})</span>
 	</div>
 	<div class="extract">
          ${h.truncate(group.description, length=80, whole_word=True)}
