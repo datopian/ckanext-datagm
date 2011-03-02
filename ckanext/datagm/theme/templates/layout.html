@@ -6,21 +6,22 @@
   py:strip=""
   >
 
+<!-- ! insert IE stylesheet (base templates don't do this correctly) -->
   <py:match path="//link[@rel='stylesheet']">
       ${select('.*')} 
-
    <!--[if IE]>
     <link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, print" />
    <![endif]-->
-
  </py:match>
 
+<!-- ! workaround bug in current release (due to be fixed soon) -->
   <py:match path="//body">
     <body class="${value_of('body_class', default=c.body_class)}">
       ${select('child::.')}
     </body>
   </py:match>
 
+<!-- ! remove extra filtering guff on main package search page (also due to be removed in a release soon) -->
   <py:match path="//form[@id='package-search']//div[@class='package-search-filters']">
     <div>
       <input type="submit" value="${_('Search')}" class="button" />
@@ -28,6 +29,7 @@
     </div>    
   </py:match>
 
+<!-- ! our custom primary nav -->
   <py:match path="//div[@class='menu']">
     <div class="menu">
       <ul>
@@ -39,6 +41,7 @@
     </div>
   </py:match>
 
+<!-- make a really big search box in the top bar -->
   <py:match path="//div[@id='top-bar']/div[@class='search-form']">
     <div class="search-form">
         <form action="${url(controller='package', action='search')}" method="GET">
@@ -48,6 +51,7 @@
     </div>
   </py:match>
   
+<!-- ! custom footer links (the target pages should come from Wordpress via the wordpresser extension -->
   <py:match path="//div[@id='footer']">
     <div id="colophon">
       <div id="footer-widget-area" role="complementary">

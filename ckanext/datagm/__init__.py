@@ -1,8 +1,12 @@
 import os
 from logging import getLogger
 
+from genshi.filters.transform import Transformer
+from genshi.input import HTML
+
 from ckan.plugins import implements, SingletonPlugin
 from ckan.plugins import IRoutes, IConfigurer
+from ckan.plugins import IGenshiStreamFilter
 
 log = getLogger(__name__)
 
@@ -10,6 +14,7 @@ log = getLogger(__name__)
 class DataGMPlugin(SingletonPlugin):
     implements(IRoutes, inherit=True)
     implements(IConfigurer, inherit=True)
+    implements(IGenshiStreamFilter, inherit=True)
 
     def before_map(self, map):
         map.connect('home', '/',
@@ -31,3 +36,11 @@ class DataGMPlugin(SingletonPlugin):
         config['googleanalytics.id'] = 'UA-21313878-1'
         config['ckan.site_title'] = "DataGM - Data Greater Manchester"
         config['ckan.site_logo'] = "/img/datagm-beta.png"
+
+    def filter(self, stream):
+        text_containers = ["p", "a", "h1", "h2", "h3", "h4", "em",
+                           "strong"]
+        text_xpath = "|".join(["//%s/text()" % x for x in text_containers])
+        stream = stream | Transformer(text_xpath)\
+                 .substitute('[pP]ackage', 'dataset')
+        return stream
