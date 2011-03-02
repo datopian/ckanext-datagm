@@ -1,0 +1,15 @@
+div.extract {
+  padding-right: 55px;
+}
+div.header ul {
+ margin: -20px 0 0 0;
+} 
+.clearfix {
+  zoom: 1; /* triggers hasLayout */
+  display: block; /* resets display for IE/Win */
+}
+
+#tagcloud * {
+ padding-bottom: 4px;
+ border: solid red 1px;
+}

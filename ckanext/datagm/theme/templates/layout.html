@@ -6,10 +6,26 @@
   py:strip=""
   >
 
+  <py:match path="//link[@rel='stylesheet']">
+      ${select('.*')} 
+
+   <!--[if IE]>
+    <link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, print" />
+   <![endif]-->
+
+ </py:match>
+
   <py:match path="//body">
     <body class="${value_of('body_class', default=c.body_class)}">
       ${select('child::.')}
     </body>
+  </py:match>
+
+  <py:match path="//form[@id='package-search']//div[@class='package-search-filters']">
+    <div>
+      <input type="submit" value="${_('Search')}" class="button" />
+     <br />
+    </div>    
   </py:match>
 
   <py:match path="//div[@class='menu']">
@@ -22,6 +38,7 @@
     </ul>
     </div>
   </py:match>
+
   <py:match path="//div[@id='top-bar']/div[@class='search-form']">
     <div class="search-form">
         <form action="${url(controller='package', action='search')}" method="GET">

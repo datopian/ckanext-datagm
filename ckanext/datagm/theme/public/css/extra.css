@@ -5,6 +5,12 @@ body {
 body, h1, h2, h3, h4, h5, h6 {
   font-family:arial
 }
+.contact-form label {
+  display: block;
+  float: none;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
 
 h2.head {
   font-family:georgia,arial; font-size:200%;
