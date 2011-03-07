@@ -40,7 +40,8 @@ class DataGMPlugin(SingletonPlugin):
     def filter(self, stream):
         text_containers = ["p", "a", "h1", "h2", "h3", "h4", "em",
                            "strong"]
-        text_xpath = "|".join(["//%s/text()" % x for x in text_containers])
+        text_xpath = "|".join(["//%s/text()" % x \
+                               for x in text_containers])
         stream = stream | Transformer(text_xpath)\
-                 .substitute('[pP]ackage', 'dataset')
+                 .substitute(r'([^/])[pP]ackage', r'\1dataset')
         return stream
