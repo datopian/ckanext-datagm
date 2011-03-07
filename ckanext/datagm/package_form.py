@@ -19,7 +19,7 @@ def build_package_gov_form(is_admin=False,
     field_groups = OrderedDict([
         (_('Basic information'), ['title', 'name', 'url',
                                   'notes', 'tags']),
-        (_('Details'), ['author', 'author_email',
+        (_('Details'), ['author', 'author_email', 'groups',
                         'maintainer', 'maintainer_email',
                         'license_id', 'temporal_coverage' ]),
         (_('Resources'), ['resources']),
