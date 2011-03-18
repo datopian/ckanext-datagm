@@ -1,5 +1,5 @@
 div.extract {
- padding-right: 55px;
+ padding-right: 65px;
 }
 div.header ul {
  margin: -20px 0 0 0;
@@ -11,4 +11,26 @@ div.header ul {
 
 #tagcloud * {
  padding-bottom: 4px;
+}
+
+#wrapper {
+ margin: 0 3%;
+}
+
+form dl dt {
+ margin: 0;
+ padding: 0;
+ clear: left;
+}
+
+form dl dd {
+ margin: 0;
+ padding: 0 0 0 10px;
+ float: left;
+}
+
+form dl dd input {
+ display: inline;
+ margin: 5px ! important;
+ clear: none;
 }
