@@ -267,3 +267,13 @@ div.textwidget ul,
 div.textwidget ul li,
 div.textwidget ul li a,
  {display:inline ! important}
+
+div.twtr-hd {
+ display: none;
+}
+
+p#latest-tweet {
+ font-size: 12px;
+ margin: 0;
+ 
+}

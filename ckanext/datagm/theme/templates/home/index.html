@@ -77,6 +77,39 @@
      <p>
 DataGM has been created by public sector partners to free Greater Manchester’s public data.
      </p>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<p id="latest-tweet">Latest tweet:</p>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 1,
+  interval: 6000,
+  width: 'auto',
+  height: 100,
+  theme: {
+    shell: {
+      background: '#ffffff',
+      color: '#000000'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#154D53',
+      links: '#4c4b6e'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: false,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('sebbacon').start();
+</script>
+
      <span class="st_twitter_large" displayText="Tweet"></span><span class="st_facebook_large" displayText="Facebook"></span><span class="st_ybuzz_large" displayText="Yahoo! Buzz"></span><span class="st_gbuzz_large" displayText="Google Buzz"></span><span class="st_email_large" displayText="Email"></span><span class="st_sharethis_large" displayText="ShareThis"></span>
      </div>
     </div>
