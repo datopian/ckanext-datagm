@@ -1,14 +1,44 @@
 import sys
-from ckan.lib.base import *
+from ckan.lib.base import request
+from ckan.lib.base import c, g, h
+from ckan.lib.base import model
+from ckan.lib.base import etag_cache, cache
+from ckan.lib.base import render
+from ckan.lib.base import _
 import random
 from ckan.lib.search import query_for
 import ckan.lib.stats
 import ckan.authz as authz
 from ckan.authz import Authorizer
 from ckanext.googleanalytics.controller import GAController
+from ckan.controllers.user import UserController
 from ckan.lib.cache import proxy_cache, get_cache_expires
 
 cache_expires = get_cache_expires(sys.modules[__name__])
+
+
+class DataGMUserController(UserController):
+    def datagm_register(self):
+        if request.method == 'POST':
+            # custom validation for DataGM
+            error = False
+            c.email = request.params.getone('email')
+            c.login = request.params.getone('login')
+            if not model.User.check_name_available(c.login):
+                error = True
+                h.flash_error(_("That username is not available."))
+            if not c.email:
+                error = True
+                h.flash_error(_("You must supply an email address."))
+            try:
+                self._get_form_password()
+            except ValueError, ve:
+                h.flash_error(ve)
+                error = True
+            if error:
+                return render('user/register.html')
+        # now delegate to core CKAN register method
+        return self.register()
 
 
 class DataGMHomeController(GAController):

@@ -20,6 +20,9 @@ class DataGMPlugin(SingletonPlugin):
         map.connect('home', '/',
                     controller='ckanext.datagm.controller:DataGMHomeController',
                     action='index')
+        map.connect('/user/register',
+                    controller='ckanext.datagm.controller:DataGMUserController',
+                    action='datagm_register')
         return map
 
     def update_config(self, config):
