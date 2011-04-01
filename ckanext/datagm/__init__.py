@@ -39,6 +39,9 @@ class DataGMPlugin(SingletonPlugin):
         config['googleanalytics.id'] = 'UA-21313878-1'
         config['ckan.site_title'] = "DataGM - Data Greater Manchester"
         config['ckan.site_logo'] = "/img/datagm-beta.png"
+        config['ckan.default_roles.Package'] = \
+                 ('{"visitor": ["reader"], '
+                  '"logged_in": ["reader"], ')
 
     def filter(self, stream):
         text_containers = ["p", "a", "h1", "h2", "h3", "h4", "em",
