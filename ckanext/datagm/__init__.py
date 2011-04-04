@@ -41,7 +41,7 @@ class DataGMPlugin(SingletonPlugin):
         config['ckan.site_logo'] = "/img/datagm-beta.png"
         config['ckan.default_roles.Package'] = \
                  ('{"visitor": ["reader"], '
-                  '"logged_in": ["reader"], ')
+                  '"logged_in": ["reader"]} ')
 
     def filter(self, stream):
         text_containers = ["p", "a", "h1", "h2", "h3", "h4", "em",
