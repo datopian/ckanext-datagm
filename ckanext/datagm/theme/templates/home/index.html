@@ -126,7 +126,7 @@ new TWTR.Widget({
    <div class="content-row row3">
     <div class="pane span-1">
       <h4>popular data</h4> 
-      ${package_list(c.top_packages)}
+      ${package_list([x[0] for x in c.top_packages])}
     </div>
     <div class="pane span-1 last">
       <h4>latest data</h4>
