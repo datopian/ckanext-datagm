@@ -11,6 +11,7 @@ import ckan.lib.stats
 import ckan.authz as authz
 from ckan.authz import Authorizer
 from ckanext.googleanalytics.controller import GAController
+from ckanext.googleanalytics import dbutil
 from ckan.controllers.user import UserController
 from ckan.lib.cache import proxy_cache, get_cache_expires
 
@@ -51,7 +52,7 @@ class DataGMHomeController(GAController):
                    .authorized_query(c.user,
                                      model.Group)\
                    .order_by(model.Group.title)
-        c.top_packages = [x[0] for x in self.get_top_packages()][:5]
+        c.top_packages = dbutil.get_top_packages(limit=5)
         c.body_class = "home"
         query = query_for(model.Package)
         query.run(query='*:*', facet_by=g.facets,
