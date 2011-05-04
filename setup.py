@@ -25,7 +25,7 @@ setup(
 	entry_points=\
 	"""
         [ckan.plugins]
-	datagm=ckanext.datagm:DataGMPlugin
+	datagm=ckanext.datagm.plugin:DataGMPlugin
 
         [ckan.forms]
         datagm_package_form = ckanext.datagm.package_form:get_datagm_fieldset
