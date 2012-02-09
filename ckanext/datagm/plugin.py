@@ -32,11 +32,18 @@ class DataGMPlugin(SingletonPlugin):
                                       'datagm', 'theme', 'public')
         template_dir = os.path.join(rootdir, 'ckanext',
                                     'datagm', 'theme', 'templates')
-        config['extra_public_paths'] = ','.join([our_public_dir,
-                config.get('extra_public_paths', '')])
-        config['extra_template_paths'] = ','.join([template_dir,
-                config.get('extra_template_paths', '')])
-        config['googleanalytics.id'] = 'UA-26856027-1'
+        config['extra_public_paths'] = ','.join(
+            [path
+             for path in [our_public_dir, config.get('extra_public_paths', '')]
+             if path]
+             )
+        log.debug('extra_public_paths = %r', config['extra_public_paths'])
+        config['extra_template_paths'] = ','.join(
+            [path
+             for path in [template_dir, config.get('extra_template_paths', '')]
+             if path]
+            )
+        config['googleanalytics.id'] = 'UA-21313878-1'
         config['ckan.site_title'] = "DataGM - Data Greater Manchester"
         config['ckan.site_logo'] = "/img/datagm-beta.png"
         config['ckan.default_roles.Package'] = \
