@@ -1,0 +1,117 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Accessibility') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Accessibility'), controller='ckanext.datagm.plugin:DataGMController', action='accessibility' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+        <p>DataGM.org.uk is committed to making this website accessible to all
+        users, regardless of circumstances. We are actively working to increase
+        the accessibility and usability of the site; if you have any questions
+        or suggestions regarding the accessibility of this site, or if you have
+        difficulty using any part of it, please
+        <a href="http://data.gov.uk/contact">contact us</a>.</p>
+
+        <h3>Standards compliance</h3>
+
+        <p>We are working towards ensuring that all pages on this site comply
+        with priority 2 guidelines of the
+        <a href="http://www.w3.org/WAI/intro/wcag.php">W3C Web Content Accessibility Guidelines</a>.
+        Whilst data.gov.uk strives to adhere to the accepted guidelines and
+        standards for accessibility and usability, it is not always possible to
+        do so in all areas of the website. We are continually seeking out
+        solutions that will bring all areas of the site up to the same level of
+        overall accessibility.</p>
+
+        <h3>How do I make the text bigger so that it is easier for me to read?</h3>
+
+        <p>Some users might find screen text easier to read by increasing the
+        size at which text is displayed. To do this you should simply adjust
+        your browser’s settings.</p>
+
+        <ul>
+
+        <li>Using Internet Explorer, go to View &gt; Text size &gt; and select
+        the size you want</li>
+
+        <li>Using Firefox, go to the View menu, select Zoom and then either
+        Increase Ctrl + +, Decrease Ctrl + -or Normal Ctrl + 0.</li>
+
+        <li>Using Opera, View &gt; Zoom &gt; and select the size you want</li>
+
+        </ul>
+
+        <h3>What are PDFs and how do I read them?</h3>
+
+        <p>PDF stands for Portable Document File. You need a plug-in called
+        Adobe Acrobat Reader to view these files which you can download for
+        free from
+        <a href="http://www.adobe.com/products/acrobat/readstep.html">Adobe’s website</a>.
+        </p>
+
+        <p>Users who have concerns about accessibility should visit
+        <a href="http://access.adobe.com/">Adobe’s accessibility website</a>.
+        Recent versions of Acrobat Reader have a Read Out Loud facility, which
+        can be found under the View menu.</p>
+
+        <h3>How can I view a Word file if I don’t have Word software?</h3>
+
+        <p>A free Word viewer is available from Microsoft at the
+        <a href="http://www.microsoft.com/downloads/search.aspx?displaylang=en&amp;categoryid=9">Microsoft Download Center</a>.
+        You’ll find Word, Excel and PowerPoint viewers here too. Open source
+        versions of similar software can be accessed at
+        <a title="http://www.openoffice.org/" href="http://www.openoffice.org/">http://www.openoffice.org/</a>
+        </p>
+
+        <h3>Accessibility software</h3>
+
+        <ol>
+
+        <li><a href="http://www.freedomscientific.com/fs_downloads/jaws.asp">JAWS</a>
+        is a screen reader for Windows. A time-limited, downloadable demo is
+        available.</li>
+
+        <li><a href="http://lynx.browser.org/">Lynx</a> is a free text-only web
+        browser for blind users with refreshable Braille displays.</li>
+
+        <li><a href="http://www.opera.com/">Opera</a> is a visual browser with
+        many accessibility-related features, including text zooming, user
+        stylesheets and image toggle. A free downloadable version is available.
+        It is compatible with Windows, Macintosh, Linux, and several other
+        operating systems.</li>
+
+        </ol>
+
+        <h3>Accessibility services</h3>
+
+        <ol>
+
+        <li><a href="http://validator.w3.org/">HTML Validator</a> is a free
+        service for checking web pages conform to published HTML
+        standards.</li>
+
+        <li><a href="http://www.delorie.com/web/wpbcv.html">Web Page Backward Compatibility Viewer</a>
+        is a tool for viewing your web pages without a variety of modern
+        browser features.</li>
+
+        <li><a href="http://www.delorie.com/web/lynxview.html">Lynx Viewer</a>
+        is a free service for viewing what your web pages would look like in
+        Lynx.</li>
+
+        </ol>
+
+        <p>Please note that these links are placed here only for your
+        convenience only and not as an endorsement of either product or
+        software.</p>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
+

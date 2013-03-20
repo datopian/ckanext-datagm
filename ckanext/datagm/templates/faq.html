@@ -1,0 +1,150 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('FAQ') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('FAQ'), controller='ckanext.datagm.plugin:DataGMController', action='faq' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+        <h3>What is DataGM?</h3>
+
+        <p>DataGM has been created by public sector organisations in Greater
+        Manchester, to release and bring together in one place, as much of the
+        (non personal) data they hold as possible.</p>
+
+        <h3>What is the status of this site?</h3>
+
+        <p>DataGM launched with a beta version in February 2011. Developments
+        are continuing across the site and of course, more and more data will
+        be added, so do check back regularly and please tell <a title="contact
+          us" href="http://datagm.org.uk/contact-us">us what you think</a>.</p>
+
+        <h3>Who is in charge of DataGM?</h3>
+
+        <p>Trafford Council is co-ordinating DataGM on behalf of partner
+        authorities in Greater Manchester and each is responsible for which
+        data they add to the site, including ensuring that it does not contain
+        any personal information covered by the Data Protection Act or is
+        covered by an exemption in the Freedom of Information Act. It is also
+        the responsibility of authority adding data to the site to ensure it is
+        covered under a relevant open licence.</p>
+
+        <h3>How can people use DataGM?</h3>
+
+        <p>DataGM provides a search engine to offer several ways of finding the
+        data you want. You can view all the datasets to see everything that is
+        available or search by keyword or publisher. Each dataset provides
+        guidance on accessing its data. You can also browse data by subject
+        tags.</p>
+
+        <h3>What data cannot or will not be released?</h3>
+
+        <p>Our policy is to withhold data where to release it would infringe
+        privacy legislation or where release would be exempt under other
+        legislation, such as Freedom of Information.</p>
+
+        <h3>Isn’t some of this data available elsewhere?</h3>
+
+        <p>We recognise that our partners already provide open access to much
+        of their data and we are providing direct links to this data, with the
+        added advantage that it can all be accessed from one place and in a
+        common format. DataGM can add extra value by allowing a focus on the
+        data for Greater Manchester as a whole, or enabling comparison of data
+        across organisational and geographical boundaries at varying
+        geographical levels.</p>
+
+        <h3>How were the datasets in DataGM selected?</h3>
+
+        <p>Excluding personal and sensitive information, and information
+        covered by legislative exemptions, all information created by Greater
+        Manchester public sector organisations is, in principle, available for
+        re-use.</p>
+
+        <p>Rather than structure the process of putting data on DataGM, we have
+        started by putting common local authority datasets and datasets which
+        are ready to go, and plan to work our way through as partners, adding
+        datasets as we go.</p>
+
+        <h3>Why is a particular dataset not available yet and when will
+          it be?</h3>
+
+        <p>Given the volumes of data, it will be some time before everything is
+        available. If there is something you wish to see more quickly, please
+        contact the team using the <a title="contact us"
+          href="http://datagm.org.uk/contact-us">contact form</a>, or the
+        individual authority which collects the data.</p>
+
+        <h3>How can people submit applications and
+          visualisations?</h3>
+
+        <p>Go to the <a title="uses of data"
+          href="http://datagm.org.uk/uses-of-data">Uses of Data </a>page, where
+        you’ll find information and a link for submitting your own application
+        and facilities for commenting on datasets.</p>
+
+        <h3>How can people make contact with the project?</h3>
+
+        <p>To keep up with the latest progress and developments, check the
+        posts on the ‘sets of data’ page, follow us on Twitter (coming soon) or
+        <a title="contact us" href="http://datagm.org.uk/contact-us">contact
+          us</a>.</p>
+
+        <h3>How can people submit ideas?</h3>
+
+        <p>If you have a good idea for an application of data, please go to the
+        <a title="uses of data" href="http://datagm.org.uk/uses-of-data">‘uses
+          of data’ </a>page where you’ll find ideas people have submitted and
+        can submit yours.</p>
+
+        <h3>Who do I contact if I have a comment, complaint or
+          compliment about this site?</h3>
+
+        <p>Comments about DataGM are welcome. In the first instance please use
+        our <a title="contact us"
+          href="http://datagm.org.uk/contact-us">contact us </a>form, which
+        will be received by the DataGM Project Team who will respond as quickly
+        as possible or pass it to the partner authority for a response.</p>
+
+        <h3>Will more data become available in the future?</h3>
+
+        <p>Yes, we will be adding data often; as the project develops, more and
+        more data will be on the site.</p>
+
+        <h3>Under what licence is the data available?</h3>
+
+        <p>In general, the data is licensed under the Open Government Licence.
+        You can read details on what that means on our <a title="terms/license"
+          href="http://datagm.org.uk/terms-licence">licence page.</a></p>
+
+        <h3>What are the commercial use rights if people have commercial
+          ideas?</h3>
+
+        <p>The Open Government licence enables you to use all the data under
+        that licence (which will be stated with the data) for commercial
+        purposes. We are delighted that you see a commercial opportunity in
+        using the data on DataGM.</p>
+
+        <h3>Is there a place for people to discuss ideas, applications
+          and using the data?</h3>
+
+        <p>Each dataset has a ‘comment on’ function, where people can start
+        discussions about the data. Future developments are proposed, such as a
+        forum and ideas page. Please also see the <a title="uses of data"
+          href="http://datagm.org.uk/uses-of-data">‘uses of data’ </a>page.</p>
+
+        <h3>Are there any “do’s” and “dont’s”?</h3>
+
+        <p>We have a simple<a title="code of conduct"
+          href="http://http://datagm.org.uk/code-of-conduct"> code of conduct
+        </a>relating to using DataGM and using the data on it.</p>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
+

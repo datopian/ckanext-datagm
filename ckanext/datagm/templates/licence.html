@@ -1,0 +1,46 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Licence') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Licence'), controller='ckanext.datagm.plugin:DataGMController', action='licence' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+        <p>Each dataset on DataGM includes associated licensing terms.  Unless
+        otherwise stated, data and information available through
+        <a href="http://www.datagm.org.uk/">www.DataGM.org.uk</a> is licensed
+        under the
+        <a href="http://reference.data.gov.uk/id/open-government-licence">Open Government Licence</a>.
+        By downloading that dataset, you are indicating your acceptance of the
+        terms of the licence associated with it.</p>
+
+        <p>Where OS OpenData datasets have been used in the creation of the
+        derived data, the OS OpenData Licence applies in place of the Open
+        Government Licence
+        <a href="hwhere%20OS%20OpenData%20datasets%20have%20been%20used%20in%20the%20creation%20of%20the%20derived%20data,%20the%20OS%20OpenData%20applies%20in%20place%20of%20the%20Open%20Government%20Licence,%20which%20can%20be%20found%20at%20//">http://www.ordnancesurvey.co.uk/oswebsite/opendata/docs/os-opendata-licence.pdf</a>
+        </p>
+
+        <h3>Information you submit</h3>
+
+        <p>We want the information on this site to be open and as easy to
+        re-use as possible. When you submit information to this site we will
+        work on the basis that, unless you clearly state otherwise alongside
+        your work, that you are granting a non-exclusive, irrevocable right to
+        use and pass on all public information that you submit as well as the
+        right to re-use allow the re-use of that information. This is so that
+        we can place the contents of this site under the most permissive
+        licence terms posible.</p>
+
+        <p>Provided your ideas and applications conform to the the licensing
+        terms associated with the datasets from which you develop them, your
+        ideas and applications developed remain your own.</p>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
