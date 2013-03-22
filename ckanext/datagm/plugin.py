@@ -15,6 +15,16 @@ class DataGMPlugin(plugins.SingletonPlugin):
         # that CKAN will use this plugin's custom templates.
         tk.add_template_directory(config, 'templates')
 
+        # Add this plugin's templates dir to CKAN's extra_template_paths, so
+        # that CKAN will use this plugin's custom templates.
+        tk.add_public_directory(config, 'public')
+
+        config['ckan.site_logo'] = '/logo.png'
+        config['ckan.site_custom_css'] = '''
+            .header-image { margin: 10px 0; }
+            .masthead { top: 20px; }
+            '''
+
     def before_map(self, route_map):
         with routes.mapper.SubMapper(route_map,
                 controller='ckanext.datagm.plugin:DataGMController') as m:
