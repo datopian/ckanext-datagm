@@ -5,9 +5,20 @@ import ckan.plugins.toolkit as tk
 import ckan.lib.base as base
 
 
+def organization_show(name):
+    '''Return the organization dict for the given organization.'''
+    return tk.get_action('organization_show')(data_dict={'id': name})
+
+
+def organization_list():
+    '''Return a list of the names of all of the site's organizations.'''
+    return tk.get_action('organization_list')()
+
+
 class DataGMPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IRoutes)
+    plugins.implements(plugins.ITemplateHelpers)
 
     def update_config(self, config):
 
@@ -39,6 +50,13 @@ class DataGMPlugin(plugins.SingletonPlugin):
 
     def after_map(self, route_map):
         return route_map
+
+    def get_helpers(self):
+        return {
+                'organization_show': organization_show,
+                'organization_list': organization_list
+                }
+
 
 class DataGMController(base.BaseController):
 

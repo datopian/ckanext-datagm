@@ -1,0 +1,49 @@
+{% ckan_extends %}
+{% block secondary_content %}
+  <div class="row group-listing">
+    <div class="span6">
+      <div class="box">
+        <section class="group-list module module-narrow module-shallow">
+          <header class="module-heading media">
+            <a class="media-image" href="/organization">
+              <img src="{{ h.url_for_static('/base/images/placeholder-organization.png') }}" width="100" height="60"></img>
+            </a>
+            <div class="media-content">
+              <h3 class="media-heading">
+                <a href="/organization">Publishers</a>
+              </h3>
+              <p>Browse datasets by publisher.</p>
+            </div>
+          </header>
+          <ul class="dataset-list unstyled">
+            {% for org_name in h.organization_list() %}
+              {% set org_dict = h.organization_show(org_name) %}
+              {% set url=h.url_for(controller='organization', action='read', id=org_dict.name) %}
+              <li class="dataset-item module-content">
+                <div class="dataset-content">
+                  <h3 class="dataset-heading">
+                    <a href="{{ url }}">{{ org_dict.title }}</a>
+                  </h3>
+                  {% if org_dict.description %}
+                    {% if truncate == 0 %}
+                      <p>{{ h.markdown_extract(org_dict.description)|urlize }}</p>
+                    {% else %}
+                      <p>{{ h.markdown_extract(org_dict.description, truncate)|urlize }}</p>
+                    {% endif %}
+                  {% else %}
+                    <p class="empty">{{ _('There is no description for this organization') }}</p>
+                  {% endif %}
+                  {% if org_dict.package_count == 1 %}
+                    <p>({{ org_dict.package_count }} dataset)</p>
+                  {% else %}
+                    <p>({{ org_dict.package_count }} datasets)</p>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock %}
