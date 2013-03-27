@@ -12,7 +12,7 @@ def organization_show(name):
 
 def organization_list():
     '''Return a list of the names of all of the site's organizations.'''
-    return tk.get_action('organization_list')()
+    return tk.get_action('organization_list')(data_dict={})
 
 
 class DataGMPlugin(plugins.SingletonPlugin):
