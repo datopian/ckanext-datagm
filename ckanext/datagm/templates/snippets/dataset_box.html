@@ -19,12 +19,7 @@ Example:
           </h3>
         </div>
       </header>
-      <ul class="dataset-list unstyled">
-        {% for dataset in datasets  %}
-          {% snippet 'snippets/package_item.html', package=dataset, item_class="dataset-item module-content" %}
-        {% endfor %}
-      </ul>
+      {% snippet 'snippets/package_list.html', packages=datasets, item_class="dataset-item module-content" %}
     </section>
   </div>
 </div>
-
