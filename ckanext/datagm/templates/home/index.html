@@ -1,6 +1,6 @@
 {% ckan_extends %}
 {% block secondary_content %}
-  <div class="row group-listing">
+  <div class="row group-listing" style="margin-bottom:2em;">
     {% snippet 'snippets/dataset_box.html', title='Popular datasets', datasets=h.popular_datasets() %}
     {% snippet 'snippets/dataset_box.html', title='Latest datasets', datasets=h.latest_datasets() %}
   </div>
