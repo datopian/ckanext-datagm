@@ -62,11 +62,10 @@ class DataGMPlugin(plugins.SingletonPlugin):
         # that CKAN will use this plugin's custom templates.
         tk.add_public_directory(config, 'public')
 
+        # Add this plugin's fanstatic dir
+        tk.add_resource('fanstatic_library', 'ckanext-datagm')
+
         config['ckan.site_logo'] = '/logo.png'
-        config['ckan.site_custom_css'] = '''
-            .header-image { margin: 10px 0; }
-            .masthead { top: 20px; }
-            '''
 
     def before_map(self, route_map):
         with routes.mapper.SubMapper(route_map,

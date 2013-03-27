@@ -1,0 +1,39 @@
+.header-image {
+  margin: 10px 0;
+}
+
+.masthead .content {
+  top: 20px;
+}
+
+.dataset-list .dataset-item .empty {
+  margin-bottom: 0;
+}
+
+.homepage h3.media-heading {
+  margin: 0;
+}
+
+.homepage h3.media-heading i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.homepage .media-grid {
+  margin-top: 12px;
+  margin-left: -16px;
+}
+
+.homepage .media-grid .media-item {
+  width: 230px;
+  padding-bottom: 20px;
+}
+
+.homepage .media-grid .media-item .media-heading {
+  margin-bottom: 5px;
+}
+
+.homepage .media-grid .media-item .media-image {
+  display: none; /* remove this line to show images */
+  margin-bottom: 10px;
+}

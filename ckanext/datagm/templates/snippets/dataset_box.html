@@ -13,11 +13,10 @@ Example:
   <div class="box">
     <section class="group-list module module-narrow module-shallow">
       <header class="module-heading media">
-        <div class="media-content">
-          <h3 class="media-heading">
-            {{ title }}
-          </h3>
-        </div>
+        <h3 class="media-heading">
+          <i class="icon-{{ icon }}"></i>
+          {{ title }}
+        </h3>
       </header>
       {% snippet 'snippets/package_list.html', packages=datasets, item_class="dataset-item module-content" %}
     </section>

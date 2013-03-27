@@ -12,50 +12,28 @@
 {% endblock %}
 
 {% block secondary_content %}
-  <div class="row group-listing" style="margin-bottom:2em;">
-    {% snippet 'snippets/dataset_box.html', title='Popular datasets', datasets=h.popular_datasets() %}
-    {% snippet 'snippets/dataset_box.html', title='Latest datasets', datasets=h.latest_datasets() %}
+  <div class="row group-listing p-bottom">
+    {% snippet 'snippets/dataset_box.html', title='Popular datasets', icon='fire', datasets=h.popular_datasets() %}
+    {% snippet 'snippets/dataset_box.html', title='Latest datasets', icon='time', datasets=h.latest_datasets() %}
   </div>
-  <div class="row group-listing">
-    <div class="span6">
-      <div class="box">
-        <section class="group-list module module-narrow module-shallow">
-          <header class="module-heading media">
-            <div class="media-content">
-              <h3 class="media-heading">
-                <a href="/organization">Browse by publisher</a>
-              </h3>
-            </div>
-          </header>
-          <ul class="dataset-list unstyled">
-            {% for org_name in h.organization_list() %}
-              {% set org_dict = h.organization_show(org_name) %}
-              {% set url=h.url_for(controller='organization', action='read', id=org_dict.name) %}
-              <li class="dataset-item module-content">
-                <div class="dataset-content">
-                  <h3 class="dataset-heading">
-                    <a href="{{ url }}">{{ org_dict.title }}</a>
-                  </h3>
-                  {% if org_dict.description %}
-                    {% if truncate == 0 %}
-                      <p>{{ h.markdown_extract(org_dict.description)|urlize }}</p>
-                    {% else %}
-                      <p>{{ h.markdown_extract(org_dict.description, truncate)|urlize }}</p>
-                    {% endif %}
-                  {% else %}
-                    <p class="empty">{{ _('There is no description for this organization') }}</p>
-                  {% endif %}
-                  {% if org_dict.package_count == 1 %}
-                    <p>({{ org_dict.package_count }} dataset)</p>
-                  {% else %}
-                    <p>({{ org_dict.package_count }} datasets)</p>
-                  {% endif %}
-                </div>
-              </li>
-            {% endfor %}
-          </ul>
-        </section>
+  <div class="box m-top">
+    <section class="group-list module module-narrow module-shallow">
+      <header class="module-heading media">
+        <h3 class="media-heading">
+          <i class="icon-building"></i>
+          <a href="/organization">Browse by publisher</a>
+        </h3>
+      </header>
+      <div class="module-content">
+        <ul class="media-grid">
+          {% for org_name in h.organization_list() %}
+            {% set first = loop.index0 % 4 == 0 %}
+            {% set last  = loop.index0 % 4 == 3 %}
+            {% set org_dict = h.organization_show(org_name) %}
+            {% snippet "organization/snippets/organization_item.html", organization=org_dict, first=first, last=last %}
+          {% endfor %}
+        </ul>
       </div>
-    </div>
+    </section>
   </div>
 {% endblock %}
