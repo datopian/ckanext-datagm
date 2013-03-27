@@ -3,6 +3,7 @@ import routes.mapper
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as tk
 import ckan.lib.base as base
+import pylons.i18n
 
 
 def organization_show(name):
@@ -27,6 +28,23 @@ def latest_datasets(limit=4):
     response = tk.get_action('package_search')(
             data_dict={'sort': 'metadata_modified desc', 'rows': limit})
     return response['results']
+
+# This overrides the default resource_display_name() template helper, and
+# changes it to say "Unnamed resource" instead of the resource's URL if the
+# resource has no name.
+def resource_display_name(resource_dict):
+    name = resource_dict.get('name', None)
+    description = resource_dict.get('description', None)
+    if name:
+        return name
+    elif description:
+        description = description.split('.')[0]
+        max_len = 60
+        if len(description) > max_len:
+            description = description[:max_len] + '...'
+        return description
+    else:
+        return pylons.i18n._("Unnamed resource")
 
 
 class DataGMPlugin(plugins.SingletonPlugin):
@@ -71,6 +89,7 @@ class DataGMPlugin(plugins.SingletonPlugin):
                 'organization_list': organization_list,
                 'popular_datasets': popular_datasets,
                 'latest_datasets': latest_datasets,
+                'resource_display_name': resource_display_name,
                 }
 
 
