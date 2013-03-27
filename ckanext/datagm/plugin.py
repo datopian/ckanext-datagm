@@ -15,6 +15,20 @@ def organization_list():
     return tk.get_action('organization_list')(data_dict={})
 
 
+def popular_datasets(limit=4):
+    '''Return a list of the most popular datasets on the site.'''
+    response = tk.get_action('package_search')(
+            data_dict={'sort': 'views_recent desc', 'rows': limit})
+    return response['results']
+
+
+def latest_datasets(limit=4):
+    '''Return a list of the most popular datasets on the site.'''
+    response = tk.get_action('package_search')(
+            data_dict={'sort': 'metadata_modified desc', 'rows': limit})
+    return response['results']
+
+
 class DataGMPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IRoutes)
@@ -54,7 +68,9 @@ class DataGMPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
                 'organization_show': organization_show,
-                'organization_list': organization_list
+                'organization_list': organization_list,
+                'popular_datasets': popular_datasets,
+                'latest_datasets': latest_datasets,
                 }
 
 

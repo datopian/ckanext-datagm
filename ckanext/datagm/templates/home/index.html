@@ -1,18 +1,18 @@
 {% ckan_extends %}
 {% block secondary_content %}
   <div class="row group-listing">
+    {% snippet 'snippets/dataset_box.html', title='Popular datasets', datasets=h.popular_datasets() %}
+    {% snippet 'snippets/dataset_box.html', title='Latest datasets', datasets=h.latest_datasets() %}
+  </div>
+  <div class="row group-listing">
     <div class="span6">
       <div class="box">
         <section class="group-list module module-narrow module-shallow">
           <header class="module-heading media">
-            <a class="media-image" href="/organization">
-              <img src="{{ h.url_for_static('/base/images/placeholder-organization.png') }}" width="100" height="60"></img>
-            </a>
             <div class="media-content">
               <h3 class="media-heading">
-                <a href="/organization">Publishers</a>
+                <a href="/organization">Browse by publisher</a>
               </h3>
-              <p>Browse datasets by publisher.</p>
             </div>
           </header>
           <ul class="dataset-list unstyled">
