@@ -6,14 +6,9 @@ import ckan.lib.base as base
 import pylons.i18n
 
 
-def organization_show(name):
-    '''Return the organization dict for the given organization.'''
-    return tk.get_action('organization_show')(data_dict={'id': name})
-
-
 def organization_list():
     '''Return a list of the names of all of the site's organizations.'''
-    return tk.get_action('organization_list')(data_dict={})
+    return tk.get_action('organization_list')(data_dict={'all_fields': True})
 
 
 def popular_datasets(limit=4):
@@ -84,7 +79,6 @@ class DataGMPlugin(plugins.SingletonPlugin):
 
     def get_helpers(self):
         return {
-                'organization_show': organization_show,
                 'organization_list': organization_list,
                 'popular_datasets': popular_datasets,
                 'latest_datasets': latest_datasets,

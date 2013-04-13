@@ -26,11 +26,10 @@
       </header>
       <div class="module-content">
         <ul class="media-grid">
-          {% for org_name in h.organization_list() %}
+          {% for organization in h.organization_list() %}
             {% set first = loop.index0 % 4 == 0 %}
             {% set last  = loop.index0 % 4 == 3 %}
-            {% set org_dict = h.organization_show(org_name) %}
-            {% snippet "organization/snippets/organization_item.html", organization=org_dict, first=first, last=last %}
+            {% snippet "organization/snippets/organization_item.html", organization=organization, first=first, last=last %}
           {% endfor %}
         </ul>
       </div>
