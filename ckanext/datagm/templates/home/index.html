@@ -2,7 +2,7 @@
 
 {% block home_image %}
   <section class="featured media-overlay">
-    <h2 class="media-heading">{% block home_image_caption %}{{ _("Trees in Trafford") }}{% endblock %}</h2>
+    <a href="{% url_for controller='home', action='about' %}"><h2 class="media-heading">{% block home_image_caption %}{{ _("Trees in Trafford") }}{% endblock %}</h2></a>
     {% block home_image_content %}
     <a class="media-image" href="{% url_for controller='home', action='about' %}">
         <img src="/2-TraffordTrees_cropped.jpg" alt="Trafford Trees" width="420" height="220" />
