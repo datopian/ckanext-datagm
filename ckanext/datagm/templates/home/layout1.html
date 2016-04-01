@@ -1,0 +1,39 @@
+<div role="main" class="main hero">
+  <div class="container">
+    <div class="row row1">
+      <div class="span6 col1">
+        {% block promoted %}
+          {% snippet 'home/snippets/promoted.html' %}
+        {% endblock %}
+      </div>
+      <div class="span6 col2">
+        {% block search %}
+          {% snippet 'home/snippets/search.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div role="main" class="main homepage">
+  <div class="container">
+    <div class="row group-listing p-bottom">
+      {% snippet 'snippets/dataset_box.html', title='Popular datasets', icon='fire', datasets=h.popular_datasets() %}
+      {% snippet 'snippets/dataset_box.html', title='Latest datasets', icon='time', datasets=h.latest_datasets() %}
+    </div>
+    <div class="box m-top">
+      <section class="group-list module module-narrow module-shallow">
+        <header class="module-heading media">
+          <h3 class="media-heading">
+            <i class="icon-building"></i>
+            <a href="/organization">Browse by publisher</a>
+          </h3>
+        </header>
+        <div class="module-content organization-list">
+        {% snippet "organization/snippets/organization_list.html", organizations=h.organization_list() %}
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

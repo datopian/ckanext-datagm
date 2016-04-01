@@ -2,8 +2,12 @@
   margin: 10px 0;
 }
 
-.masthead .content {
-  top: 20px;
+.masthead .nav-collapse {
+  top: 10px;
+}
+
+.hero .container {
+  padding-top: 20px;
 }
 
 .dataset-list .dataset-item .empty {
@@ -36,4 +40,10 @@
 .homepage .media-grid .media-item .media-image {
   display: none; /* remove this line to show images */
   margin-bottom: 10px;
+}
+
+.homepage .organization-list > ul {
+  background: none;
+  border: none;
+  margin: 0;
 }
